@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Gasoek+One&display=swap');
+
+
+
+/* REGISTER PAGE */
+
+
+.register,
+.login,
+.forgotPassword {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-block: 30px;
+    height: 100%;
+    width: 100%;
+    margin: 0px !important;
+    z-index: -2 !important;
+    background: rgb(251, 236, 116);
+    background: linear-gradient(18deg, rgba(251, 236, 116, 1) 0%, rgba(45, 253, 250, 1) 100%);
+}
+
+.register-form,
+.login-form,
+.forgotPassword-form {
+    margin: 100px;
+    border: black 1px solid;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.203);
+    z-index: 1 !important;
+}
+
+.register-h3,
+.login-h3,
+.forgotPassword-h3 {
+    font-family: 'Gasoek One', sans-serif;
+    color: #2c5e6c;
+    text-align: center;
+    margin-bottom: 35px;
+    font-size: 35px;
+}
+
+.register input,
+.login input,
+.forgotPassword input {
+    width: 350px;
+    margin-block: 5px;
+    border-radius: 3px;
+    border-width: 0px !important;
+    background-color: transparent !important;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+}
+
+
+.register input:focus,
+.login input:focus,
+.forgotPassword input:focus {
+    border-width: 0px 0px 1.5px 0px !important;
+    border-color: rgb(33, 91, 33) !important;
+    background-color: transparent !important;
+    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px !important;
+}
+
+.auth-button {
+    width: 150px;
+    background-color: rgb(161, 81, 236) !important;
+    border-width: 0px !important;
+    border-radius: 5px !important;
+    font-size: 18px !important;
+}
+
+#forgotPassword-button {
+    width: auto;
+}
+
+.thanos {
+    position: absolute;
+    top: 60vh;
+    z-index: 0;
+    left: -15px;
+    border-width: 0px;
+    object-fit: none;
+    object-position: 0px 2px;
+}
+
+
+.avatar {
+    max-height: 600px;
+    position: absolute;
+    top: 50vh;
+    z-index: 0;
+    right: 70px;
+}
+
+.scooby {
+    position: absolute;
+    top: 30vh;
+    z-index: 0;
+    border-width: 0px;
+    object-fit: none;
+    object-position: 0px 2px;
+}
+
+.fortnite {
+    position: absolute;
+    z-index: 0;
+    right: 60px;
+    top: 20vh;
+    height: 400px;
+}
+
+.clapping {
+    position: absolute;
+    left: 1vw;
+    top: 21vh;
+    z-index: 0;
+    border-width: 0px;
+    object-fit: none;
+    object-position: 0px 2px;
+}
+
+.laughing {
+    position: absolute;
+    z-index: 0;
+    right: 10px;
+    top: 28vh;
+    height: 400px;
+}
+
+@media only screen and (max-width:779px) {
+
+    .thanos,
+    .avatar {
+        display: none;
+    }
+}
