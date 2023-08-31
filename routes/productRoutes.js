@@ -8,6 +8,12 @@ import {
   deleteProductController,
   updateProductController,
   productPhotoController,
+  productFiltersController,
+  productCountController,
+  productListController,
+  searchProductController,
+  relatedProductsController,
+  productCategoryController,
 } from "../controllers/productController.js";
 
 const router = express.Router();
@@ -43,5 +49,23 @@ router.get("/product-photo/:pid", productPhotoController);
 
 //delete product
 router.delete("/delete-product/:pid", deleteProductController);
+
+//filter Product
+router.post("/product-filters", productFiltersController);
+
+//product count
+router.get("/product-count", productCountController);
+
+//pagination, product per page
+router.get("/product-list/:page", productListController);
+
+//search Product
+router.get("/search/:keyword", searchProductController);
+
+//get similar Products
+router.get("/related-product/:pid/:cid", relatedProductsController);
+
+//pagination, product per page
+router.get("/product-category/:slug", productCategoryController);
 
 export default router;

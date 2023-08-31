@@ -152,6 +152,34 @@ export const forgotPasswordController = async (req, res) => {
   }
 };
 
+export const updateProfileController = async (req, res) => {
+  try {
+    const { name, email, address, phone } = req.body;
+    const user = await userModel.findById(req.user._id);
+    const updatedUser = await userModel.findByIdAndUpdate(
+      req.user._id,
+      {
+        name: name || user.name,
+        address: address || user.address,
+        phone: phone || user.phone,
+      },
+      { new: true }
+    );
+    res.status(200).send({
+      success: true,
+      message: "Profile Updated Successfully",
+      updatedUser,
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(400).send({
+      success: false,
+      message: "Error in profile updation",
+      error,
+    });
+  }
+};
+
 //test controller
 export const testController = (req, res) => {
   res.send("Protected Route");

@@ -1,4 +1,5 @@
 import productModel from "../models/productModel.js";
+import categoryModel from "../models/categoryModel.js";
 import fs from "fs";
 import slugify from "slugify";
 
@@ -123,11 +124,18 @@ export const getSingleProductController = async (req, res) => {
       .findOne({ slug: req.params.slug })
       .select("-photo")
       .populate("category");
-    res.status(200).send({
-      success: true,
-      message: "Product Found Successfull",
-      product,
-    });
+    if (product) {
+      res.status(200).send({
+        success: true,
+        message: "Product Found Successfully",
+        product,
+      });
+    } else {
+      res.status(200).send({
+        success: false,
+        message: "Product Not Found",
+      });
+    }
   } catch (error) {
     console.log(error);
     res.status(500).send({
@@ -172,6 +180,150 @@ export const deleteProductController = async (req, res) => {
     res.status(500).send({
       success: false,
       message: "Error in deleting product",
+      error,
+    });
+  }
+};
+
+//get filtered Products
+export const productFiltersController = async (req, res) => {
+  try {
+    const { checked, range } = req.body;
+    let args = {};
+    if (checked.length > 0) {
+      args.category = checked;
+    }
+    args.price = {
+      $gte: Math.min(range[0], range[1]),
+      $lte: Math.max(range[0], range[1]),
+    };
+    const product = await productModel.find(args);
+    res.status(200).send({
+      success: true,
+      message: "Products Found Successfully",
+      product,
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({
+      success: false,
+      message: "Error while filtering products",
+      error,
+    });
+  }
+};
+
+//Get product Count
+export const productCountController = async (req, res) => {
+  try {
+    const total = await productModel.find({}).estimatedDocumentCount();
+    res.status(200).send({
+      success: true,
+      total,
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({
+      success: false,
+      message: "Error in finding products count",
+      error,
+    });
+  }
+};
+
+//pagination api- product based on page number
+export const productListController = async (req, res) => {
+  try {
+    const perPage = 6;
+    const page = req.params.page ? req.params.page : 1;
+    const products = await productModel
+      .find({})
+      .select("-photo")
+      .skip((page - 1) * perPage)
+      .limit(perPage)
+      .sort({ createdAt: -1 });
+    res.status(200).send({
+      success: true,
+      products,
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(400).send({
+      success: false,
+      error,
+    });
+  }
+};
+
+//search api
+export const searchProductController = async (req, res) => {
+  try {
+    const { keyword } = req.params;
+    const result = await productModel
+      .find({
+        $or: [
+          { name: { $regex: keyword, $options: "i" } },
+          { description: { $regex: keyword, $options: "i" } },
+        ],
+      })
+      .select("-photo");
+    res.json(result);
+  } catch (error) {
+    console.log(error);
+    res.status(404).send({
+      success: false,
+      message: "Error while searching for Products",
+      error,
+    });
+  }
+};
+
+//get Similar Products
+export const relatedProductsController = async (req, res) => {
+  try {
+    const { cid, pid } = req.params;
+    const products = await productModel
+      .find({
+        category: cid,
+        _id: { $ne: pid },
+      })
+      .select("-photo")
+      .limit(3)
+      .populate("category");
+    res.status(200).send({
+      success: true,
+      message: "Similar Products Found",
+      products,
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({
+      success: false,
+      message: "Error while finding Similar Products",
+      error,
+    });
+  }
+};
+
+//get Products based on category
+export const productCategoryController = async (req, res) => {
+  try {
+    const category = await categoryModel.findOne({ slug: req.params.slug });
+    const products = await productModel
+      .find({ category })
+      .select("-photo")
+      .populate("category");
+    res.status(200).send({
+      success: true,
+      message: "Same Category Products Found",
+      category,
+      products,
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({
+      success: false,
+      message: "Error while finding Products by Category",
       error,
     });
   }

@@ -18,6 +18,10 @@ import Orders from './pages/user/Orders.jsx';
 import Profile from './pages/user/Profile.jsx';
 import Products from './pages/Admin/Products.jsx';
 import UpdateProduct from './pages/Admin/UpdateProduct.jsx';
+import Search from './pages/user/Search.jsx';
+import ProductDetails from './pages/user/ProductDetails.jsx';
+import CategoryProducts from './pages/user/CategoryProducts.jsx';
+import CartPage from './pages/user/CartPage.jsx';
 
 
 function App() {
@@ -29,6 +33,10 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/search" element={<Search />} />
+        <Route path="/product/:slug" element={<ProductDetails />} />
+        <Route path="/category/:slug" element={<CategoryProducts />} />
+        <Route path="/cart" element={<CartPage />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/policy" element={<Policy />} />
