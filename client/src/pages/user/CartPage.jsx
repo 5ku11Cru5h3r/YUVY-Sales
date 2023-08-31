@@ -53,7 +53,7 @@ const CartPage = () => {
                     <div className="col-md-9">{cart?.map((p) => (
                         <div className="row m-2 card flex-row">
                             <div className="col-md-4">
-                                <img src={`${import.meta.env.VITE_SERVER}/api/v1/product/product-photo/${p._id}`} className="card-img-top" height={"300px"} width={"300px"}
+                                <img src={`/api/v1/product/product-photo/${p._id}`} className="card-img-top" height={"300px"} width={"300px"}
                                     alt="..." />
                             </div>
                             <div className="col-md-8">

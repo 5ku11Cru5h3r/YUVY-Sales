@@ -11,7 +11,7 @@ const ProductDetails = () => {
     //getProduct
     const getProduct = async () => {
         try {
-            const { data } = await axios.get(`${import.meta.env.VITE_SERVER}/api/v1/product/get-product/${params.slug}`);
+            const { data } = await axios.get(`/api/v1/product/get-product/${params.slug}`);
             setProduct(data?.product);
             getSimilarProduct(data?.product._id, data?.product.category._id)
         } catch (error) {
@@ -20,7 +20,7 @@ const ProductDetails = () => {
     }
     const getSimilarProduct = async (pid, cid) => {
         try {
-            const { data } = await axios.get(`${import.meta.env.VITE_SERVER}/api/v1/product/related-product/${pid}/${cid}`);
+            const { data } = await axios.get(`/api/v1/product/related-product/${pid}/${cid}`);
             setRelatedProducts(data?.products)
         } catch (error) {
             console.log(error);
@@ -37,7 +37,7 @@ const ProductDetails = () => {
             <div className="row container mt-5">
                 <div className="col-md-6">
                     <img
-                        src={`${import.meta.env.VITE_SERVER}/api/v1/product/product-photo/${product?._id}`}
+                        src={`/api/v1/product/product-photo/${product?._id}`}
                         className="card-img-top mt-5"
                     />
                 </div>
@@ -57,7 +57,7 @@ const ProductDetails = () => {
                 <div className="d-flex flex-wrap">
                     {relatedProducts?.map((p) => (
                         <div className="card d-flex m-2" style={{ width: '18rem' }}>
-                            <img src={`${import.meta.env.VITE_SERVER}/api/v1/product/product-photo/${p._id}`} className="card-img-top" alt="..." />
+                            <img src={`/api/v1/product/product-photo/${p._id}`} className="card-img-top" alt="..." />
                             <div className="card-body">
                                 <h5 className="card-title">{p.name}</h5>
                                 <h5>{p.price}</h5>

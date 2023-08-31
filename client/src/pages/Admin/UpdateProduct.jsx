@@ -24,7 +24,7 @@ const UpdateProduct = () => {
     //get Single product
     const getSingleProduct = async () => {
         try {
-            const { data } = await axios.get(`${import.meta.env.VITE_SERVER}/api/v1/product/get-product/${params.slug}`);
+            const { data } = await axios.get(`/api/v1/product/get-product/${params.slug}`);
             setName(data.product.name);
             setDescription(data.product.description);
             setPrice(data.product.price);

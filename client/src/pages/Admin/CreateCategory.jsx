@@ -15,7 +15,7 @@ const CreateCategory = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const { data } = await axios.post(`${import.meta.env.VITE_SERVER}/api/v1/category/create-category`, { name });
+            const { data } = await axios.post(`/api/v1/category/create-category`, { name });
             if (data?.success) {
                 toast.success(`Category "${name}" created .`);
                 getAllCategory();
@@ -36,7 +36,7 @@ const CreateCategory = () => {
     const handleUpdate = async (e) => {
         e.preventDefault();
         try {
-            const { data } = await axios.patch(`${import.meta.env.VITE_SERVER}/api/v1/category/update-category/${selected?._id}`, { name: updatedName });
+            const { data } = await axios.patch(`/api/v1/category/update-category/${selected?._id}`, { name: updatedName });
             if (data.success) {
                 toast.success(data.message);
                 setSelected(null);
@@ -59,7 +59,7 @@ const CreateCategory = () => {
     const handleDelete = async (e) => {
         e.preventDefault();
         try {
-            const { data } = await axios.delete(`${import.meta.env.VITE_SERVER}/api/v1/category/delete-category/${deleted._id}`, { name: deleted?.name });
+            const { data } = await axios.delete(`/api/v1/category/delete-category/${deleted._id}`, { name: deleted?.name });
             if (data.success) {
                 toast.success(data.message);
                 setDVisible(false);
@@ -78,7 +78,7 @@ const CreateCategory = () => {
     //get all category
     const getAllCategory = async () => {
         try {
-            const { data } = await axios.get(`${import.meta.env.VITE_SERVER}/api/v1/category/get-category`);
+            const { data } = await axios.get(`/api/v1/category/get-category`);
             if (data.success) {
                 setCategories(data.categories);
             }

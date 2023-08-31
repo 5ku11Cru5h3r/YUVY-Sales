@@ -22,7 +22,7 @@ const CreateProduct = () => {
     //get all categories
     const getAllCategory = async () => {
         try {
-            const { data } = await axios.get(`${import.meta.env.VITE_SERVER}/api/v1/category/get-category`);
+            const { data } = await axios.get(`/api/v1/category/get-category`);
             if (data?.success) {
                 setCategories(data?.categories);
             }
@@ -60,7 +60,7 @@ const CreateProduct = () => {
             productData.append("photo", photo)
             productData.append("quantity", quantity);
             productData.append("shipping", shipping);
-            const { data } = await axios.post(`${import.meta.env.VITE_SERVER}/api/v1/product/create-product`, productData);
+            const { data } = await axios.post(`/api/v1/product/create-product`, productData);
             if (data?.success) {
                 toast.success(data?.message);
                 setName("");

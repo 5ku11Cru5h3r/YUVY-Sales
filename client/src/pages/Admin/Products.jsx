@@ -15,7 +15,7 @@ const Products = () => {
     try {
       let answer = window.prompt("Are you sure, you want to delete this product?(Y/N)");
       if (answer == 'y' || answer == 'Y') {
-        const { data } = await axios.delete(`${import.meta.env.VITE_SERVER}/api/v1/product/delete-product/${id}`);
+        const { data } = await axios.delete(`/api/v1/product/delete-product/${id}`);
         if (data?.success) {
           toast.success(data?.message);
           getAllProducts();
@@ -38,7 +38,7 @@ const Products = () => {
   //get all products
   const getAllProducts = async () => {
     try {
-      const { data } = await axios.get(`${import.meta.env.VITE_SERVER}/api/v1/product/get-product`);
+      const { data } = await axios.get(`/api/v1/product/get-product`);
       setProducts(data.products);
     } catch (error) {
       console.log(error);
@@ -60,7 +60,7 @@ const Products = () => {
           <div className="d-flex flex-wrap">
             {products.map((p) => (
               <div className="card d-flex m-2" style={{ width: '18rem' }}>
-                <img src={`${import.meta.env.VITE_SERVER}/api/v1/product/product-photo/${p._id}`} className="card-img-top" alt="..." />
+                <img src={`/api/v1/product/product-photo/${p._id}`} className="card-img-top" alt="..." />
                 <div className="card-body">
                   <h5 className="card-title">{p.name}</h5>
                   <p className="card-text">{p.description.length > 200 ? `${p.description.substring(0, 200)}...` : p.description}</p>

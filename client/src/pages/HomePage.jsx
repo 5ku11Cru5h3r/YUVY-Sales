@@ -25,7 +25,7 @@ const HomePage = () => {
   //get Total Count
   const getTotal = async () => {
     try {
-      const { data } = await axios.get(`${import.meta.env.VITE_SERVER}/api/v1/product/product-count`);
+      const { data } = await axios.get(`/api/v1/product/product-count`);
       setTotal(data?.total)
     } catch (error) {
       console.log(error);
@@ -35,7 +35,7 @@ const HomePage = () => {
   //get all category
   const getAllCategory = async () => {
     try {
-      const { data } = await axios.get(`${import.meta.env.VITE_SERVER}/api/v1/category/get-category`);
+      const { data } = await axios.get(`/api/v1/category/get-category`);
       if (data.success) {
         setCategories(data.categories);
       }
@@ -52,7 +52,7 @@ const HomePage = () => {
   const getAllProducts = async () => {
     try {
       setLoading(true);
-      const { data } = await axios.get(`${import.meta.env.VITE_SERVER}/api/v1/product/product-list/${page}`);
+      const { data } = await axios.get(`/api/v1/product/product-list/${page}`);
       setLoading(false);
       setProducts(data.products);
     } catch (error) {
@@ -66,7 +66,7 @@ const HomePage = () => {
   const loadMore = async () => {
     try {
       setLoading(true);
-      const { data } = await axios.get(`${import.meta.env.VITE_SERVER}/api/v1/product/product-list/${page}`);
+      const { data } = await axios.get(`/api/v1/product/product-list/${page}`);
       setLoading(false);
       setProducts([...products, ...data?.products]);
     } catch (error) {
@@ -94,7 +94,7 @@ const HomePage = () => {
   const filterProduct = async () => {
     try {
       const range = [priceFilter.min, priceFilter.max];
-      const { data } = await axios.post(`${import.meta.env.VITE_SERVER}/api/v1/product/product-filters`, { checked, range });
+      const { data } = await axios.post(`/api/v1/product/product-filters`, { checked, range });
       if (data?.success) {
         setProducts(data?.product);
       }
@@ -143,7 +143,7 @@ const HomePage = () => {
           <div className="d-flex flex-wrap">
             {products?.map((p) => (
               <div className="card d-flex m-2" style={{ width: '18rem' }}>
-                <img src={`${import.meta.env.VITE_SERVER}/api/v1/product/product-photo/${p._id}`} className="card-img-top" alt="..." />
+                <img src={`/api/v1/product/product-photo/${p._id}`} className="card-img-top" alt="..." />
                 <div className="card-body">
                   <h5 className="card-title">{p.name}</h5>
                   <h5>{p.price}</h5>

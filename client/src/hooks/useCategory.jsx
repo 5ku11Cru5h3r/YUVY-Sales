@@ -7,7 +7,7 @@ const useCategory = () => {
   const getCategories = async () => {
     try {
       const { data } = await axios.get(
-        `${import.meta.env.VITE_SERVER}/api/v1/category/get-category`
+        `/api/v1/category/get-category`
       );
       setCategories(data?.categories);
     } catch (error) {

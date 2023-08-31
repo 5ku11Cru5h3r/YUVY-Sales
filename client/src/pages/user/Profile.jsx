@@ -21,7 +21,7 @@ const Profile = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const { data } = await axios.patch(`${import.meta.env.VITE_SERVER}/api/v1/auth/profile`,
+            const { data } = await axios.patch(`/api/v1/auth/profile`,
                 { name, email, phone, address }
             );
             if (data?.error) {

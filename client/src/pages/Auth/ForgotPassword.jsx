@@ -15,7 +15,7 @@ const ForgotPassword = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.patch(`${import.meta.env.VITE_SERVER}/api/v1/auth/forgot-password`, {
+            const res = await axios.patch(`/api/v1/auth/forgot-password`, {
                 email,
                 answer,
                 newPassword

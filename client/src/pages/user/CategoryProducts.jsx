@@ -13,7 +13,7 @@ const CategoryProducts = () => {
 
     // const getTotal = async () => {
     //     try {
-    //       const { data } = await axios.get(`${import.meta.env.VITE_SERVER}/api/v1/product/product-count`);
+    //       const { data } = await axios.get(`/api/v1/product/product-count`);
     //       setTotal(data?.total)
     //     } catch (error) {
     //       console.log(error);
@@ -21,7 +21,7 @@ const CategoryProducts = () => {
     //   };
     const getProductByCat = async () => {
         try {
-            const { data } = await axios.get(`${import.meta.env.VITE_SERVER}/api/v1/product/product-category/${params.slug}`);
+            const { data } = await axios.get(`/api/v1/product/product-category/${params.slug}`);
             setProducts(data?.products);
             setCategory(data?.category);
 
@@ -43,7 +43,7 @@ const CategoryProducts = () => {
                 <div className="d-flex flex-wrap">
                     {products?.map((p) => (
                         <div className="card d-flex m-2" style={{ width: '18rem' }}>
-                            <img src={`${import.meta.env.VITE_SERVER}/api/v1/product/product-photo/${p._id}`} className="card-img-top" alt="..." />
+                            <img src={`/api/v1/product/product-photo/${p._id}`} className="card-img-top" alt="..." />
                             <div className="card-body">
                                 <h5 className="card-title">{p.name}</h5>
                                 <h5>{p.price}</h5>
