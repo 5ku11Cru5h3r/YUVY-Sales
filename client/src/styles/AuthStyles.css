@@ -10,7 +10,7 @@
   justify-content: center;
   flex-direction: column;
   margin-block: 30px;
-  height: 90vh;
+  min-height: 90vh;
   width: 100%;
   margin: 0px !important;
   z-index: -2 !important;
