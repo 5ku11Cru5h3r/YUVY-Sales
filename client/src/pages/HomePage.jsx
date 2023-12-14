@@ -123,7 +123,7 @@ const HomePage = () => {
   }, [checked, priceFilter]);
 
   return (
-    <Layout title={"UKA SALES- BEST OFFERS"}>
+    <Layout title={"YUVY SALES- BEST OFFERS"}>
       <div className="row">
         <div className="col-md-3 mt-3">
           <h4 className="text-center">Filter By Category</h4>
