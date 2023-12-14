@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+/* font-family: 'Playfair Display', serif;
+font-family: 'Poppins', sans-serif; */
+
+.navbar {
+  background: rgb(250, 137, 240) !important;
+  background: radial-gradient(circle, rgba(250, 137, 240, 1) 0%, rgba(115, 33, 159, 1) 78%) !important;
+  font-family: 'Poppins', sans-serif;
+  font-size: 19px;
+  line-height: 50px;
+  text-transform: capitalize;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+  --webkit-box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+  margin: 0px !important;
+}
+
+.navbar-brand {
+  font-size: 28px;
+  font-weight: 700;
+  font-family: sans-serif;
+  letter-spacing: 3px;
+}
+
+.navbar-brand:hover {
+  color: white;
+}
+
+.nav-item {
+  padding: 0px;
+  height: 60px;
+  font-weight: 400;
+  margin-right: 5px;
+}
+
+
+.navbar-nav {
+  padding: 0px;
+  height: 40px;
+}
+
+.navbar-nav .nav-link {
+  height: 45px;
+  padding: 0 15px 0 15px;
+  border-radius: 10px;
+}
+
+.navbar-nav .nav-link:hover {
+  background-color: rgba(0, 0, 0, 0.331);
+  color: rgb(231, 231, 231) !important;
+  border-radius: 10px;
+}
+
+.dropdown-menu {
+  border-width: 0;
+  background-color: transparent !important;
+}
+
+.dropdown-item {
+  background: rgb(250, 137, 240) !important;
+  border-width: 0;
+  border-radius: 10px !important;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.dropdown-item:hover {
+  font-size: 19px;
+  background: rgb(159, 33, 151) !important;
+}
+
+.active {
+  border-bottom: 2px solid rgb(0, 0, 0);
+  padding-bottom: 0px;
+  border-radius: 0;
+}
+
+/* ======================
+======================
+FOOTER PAGE
+======================
+======================*/
+
+.footer {
+  background: #555555;
+  background: linear-gradient(90deg, rgba(85, 85, 85, 1) 0%, rgb(51, 27, 70) 55%, rgba(0, 0, 0, 1) 100%) !important;
+  color: white;
+  padding: 15px;
+  margin: 0px !important;
+}
+
+.footer a {
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+}
+
+.footer a:hover {
+  color: rgb(184, 184, 184);
+}
+
+/* admin pages */
+.product-admin-link {
+  text-decoration: none !important;
+}
