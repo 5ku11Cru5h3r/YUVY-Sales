@@ -33,7 +33,7 @@ const ForgotPassword = () => {
   };
 
   return (
-    <Layout title="Update Password - UKA SALES">
+    <Layout title="Update Password - YUVY SALES">
       <div className="forgotPassword">
         <form onSubmit={handleSubmit} className="forgotPassword-form">
           <h3 className="forgotPassword-h3">Update Password</h3>

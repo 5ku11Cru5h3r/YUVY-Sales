@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
-import { Helmet } from 'react-helmet';
-import { Toaster } from 'react-hot-toast';
+import { Helmet } from "react-helmet";
+import { Toaster } from "react-hot-toast";
 
 const Layout = ({ title, author, description, children }) => {
   return (
@@ -13,7 +13,10 @@ const Layout = ({ title, author, description, children }) => {
         <title>{title}</title>
       </Helmet>
       <Header />
-      <main className='layout-main' style={{ margin: '0px !important', minHeight: '90vh', width: '100vw' }}>
+      <main
+        className="layout-main"
+        style={{ margin: "0px !important", minHeight: "90vh", width: "100vw" }}
+      >
         <Toaster />
         {children}
       </main>
@@ -22,8 +25,8 @@ const Layout = ({ title, author, description, children }) => {
   );
 };
 Layout.defaultProps = {
-  title: "UKA SALES",
+  title: "YUVY SALES",
   author: "Unnat Kumar Agarwal",
-  description: "T4F4av4y$6w4P8jqzLnxozia6iHuQ"
-}
-export default Layout
+  description: "T4F4av4y$6w4P8jqzLnxozia6iHuQ",
+};
+export default Layout;

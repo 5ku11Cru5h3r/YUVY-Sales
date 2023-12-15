@@ -44,7 +44,7 @@ const Login = () => {
   };
 
   return (
-    <Layout title="LOGIN TO- UKA SALES">
+    <Layout title="LOGIN TO- YUVY SALES">
       <div className="login">
         <form className="login-form" onSubmit={handleSubmit}>
           <h3 className="login-h3">WELCOME BACK!</h3>

@@ -40,7 +40,7 @@ const Register = () => {
   };
 
   return (
-    <Layout title="Register - UKA SALES">
+    <Layout title="Register - YUVY SALES">
       <div className="register">
         <form className="register-form" onSubmit={handleSubmit}>
           <h3 className="register-h3">REGISTERATION</h3>
