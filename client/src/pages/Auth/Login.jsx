@@ -79,8 +79,10 @@ const Login = () => {
           </Link>
         </form>
       </div>
-      <img src={fortnite} className="fortnite" alt="fortnite" />
-      <img src={scooby} className="scooby" alt="scooby" />
+      {
+        //<img src={fortnite} className="fortnite" alt="fortnite" />
+        //<img src={scooby} className="scooby" alt="scooby" />
+      }
     </Layout>
   );
 };

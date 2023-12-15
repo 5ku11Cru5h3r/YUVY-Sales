@@ -85,8 +85,10 @@ const ForgotPassword = () => {
             Change Password
           </button>
         </form>
-        <img src={clapping} className="clapping" alt="clapping" />
-        <img src={laughing} className="laughing" alt="laughing" />
+        {
+          // <img src={clapping} className="clapping" alt="clapping" />
+          // <img src={laughing} className="laughing" alt="laughing" />
+        }
       </div>
     </Layout>
   );
