@@ -4,8 +4,6 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import "../../styles/AuthStyles.css";
-import thanos from "../../images/thanos.gif";
-import avatar from "../../images/avatar.gif";
 
 const Register = () => {
   const [name, setName] = useState("");
