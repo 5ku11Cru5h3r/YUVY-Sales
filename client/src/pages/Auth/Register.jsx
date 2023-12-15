@@ -115,8 +115,6 @@ const Register = () => {
           </button>
         </form>
       </div>
-      <img src={thanos} className="thanos" alt="thanos" />
-      <img src={avatar} className="avatar" alt="avatar" />
     </Layout>
   );
 };
