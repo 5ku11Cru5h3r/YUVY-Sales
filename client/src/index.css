@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400&display=swap");
 
 * {
   margin: 0;
@@ -18,7 +18,7 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number] {
+input[type="number"] {
   appearance: textfield;
   -moz-appearance: textfield;
 }
@@ -28,8 +28,12 @@ font-family: 'Poppins', sans-serif; */
 
 .navbar {
   background: rgb(250, 137, 240) !important;
-  background: radial-gradient(circle, rgba(250, 137, 240, 1) 0%, rgba(115, 33, 159, 1) 78%) !important;
-  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(
+    circle,
+    rgba(242, 225, 210, 1) 0%,
+    rgba(247, 197, 159, 1) 78%
+  ) !important;
+  font-family: "Poppins", sans-serif;
   font-size: 19px;
   line-height: 50px;
   text-transform: capitalize;
@@ -55,7 +59,6 @@ font-family: 'Poppins', sans-serif; */
   font-weight: 400;
   margin-right: 5px;
 }
-
 
 .navbar-nav {
   padding: 0px;
@@ -84,7 +87,7 @@ font-family: 'Poppins', sans-serif; */
   border-width: 0;
   border-radius: 10px !important;
   font-size: 16px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .dropdown-item:hover {
@@ -106,20 +109,24 @@ FOOTER PAGE
 
 .footer {
   background: #555555;
-  background: linear-gradient(90deg, rgba(85, 85, 85, 1) 0%, rgb(51, 27, 70) 55%, rgba(0, 0, 0, 1) 100%) !important;
-  color: white;
+  background: radial-gradient(
+    circle,
+    rgba(242, 225, 210, 1) 0%,
+    rgba(247, 197, 159, 1) 78%
+  ) !important;
+  color: salmon;
   padding: 15px;
   margin: 0px !important;
 }
 
 .footer a {
   text-decoration: none;
-  color: white;
+  color: red;
   padding: 10px;
 }
 
 .footer a:hover {
-  color: rgb(184, 184, 184);
+  color: darksalmon;
 }
 
 /* admin pages */

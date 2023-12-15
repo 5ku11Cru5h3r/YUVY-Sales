@@ -14,11 +14,11 @@
   width: 100%;
   margin: 0px !important;
   z-index: -2 !important;
-  background: rgb(251, 236, 116);
+  background: rgb(239, 64, 64);
   background: linear-gradient(
     18deg,
-    rgba(251, 236, 116, 1) 0%,
-    rgba(45, 253, 250, 1) 100%
+    rgb(254, 135, 97) 0%,
+    rgb(254, 211, 159) 100%
   );
 }
 
@@ -35,8 +35,8 @@
 .register-h3,
 .login-h3,
 .forgotPassword-h3 {
-  font-family: "Gasoek One", sans-serif;
-  color: #2c5e6c;
+  font-family: cursive, sans-serif;
+  color: rgb(175, 70, 15);
   text-align: center;
   margin-bottom: 35px;
   font-size: 35px;
@@ -65,7 +65,7 @@
 
 .auth-button {
   width: 150px;
-  background-color: rgb(161, 81, 236) !important;
+  background-color: rgb(175, 70, 15) !important;
   border-width: 0px !important;
   border-radius: 5px !important;
   font-size: 18px !important;
