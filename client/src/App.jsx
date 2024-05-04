@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage.jsx";
 import About from "./pages/About.jsx";
 import Contact from "./pages/Contact.jsx";
@@ -6,26 +6,24 @@ import Policy from "./pages/Policy.jsx";
 import Register from "./pages/Auth/Register.jsx";
 import Pagenotfound from "./pages/Pagenotfound.jsx";
 import Login from "./pages/Auth/Login.jsx";
-import Dashboard from './pages/user/Dashboard.jsx';
-import PrivateRoute from './components/Routes/Private.jsx';
-import ForgotPassword from './pages/Auth/ForgotPassword.jsx';
-import AdminRoute from './components/Routes/AdminRoute.jsx';
-import AdminDashboard from './pages/Admin/AdminDashboard.jsx';
-import CreateCategory from './pages/Admin/CreateCategory.jsx';
-import CreateProduct from './pages/Admin/CreateProduct.jsx';
-import Users from './pages/Admin/Users.jsx';
-import Orders from './pages/user/Orders.jsx';
-import Profile from './pages/user/Profile.jsx';
-import Products from './pages/Admin/Products.jsx';
-import UpdateProduct from './pages/Admin/UpdateProduct.jsx';
-import Search from './pages/user/Search.jsx';
-import ProductDetails from './pages/user/ProductDetails.jsx';
-import CategoryProducts from './pages/user/CategoryProducts.jsx';
-import CartPage from './pages/user/CartPage.jsx';
-
+import Dashboard from "./pages/user/Dashboard.jsx";
+import PrivateRoute from "./components/Routes/Private.jsx";
+import ForgotPassword from "./pages/Auth/ForgotPassword.jsx";
+import AdminRoute from "./components/Routes/AdminRoute.jsx";
+import AdminDashboard from "./pages/Admin/AdminDashboard.jsx";
+import CreateCategory from "./pages/Admin/CreateCategory.jsx";
+import CreateProduct from "./pages/Admin/CreateProduct.jsx";
+import Users from "./pages/Admin/Users.jsx";
+import Orders from "./pages/user/Orders.jsx";
+import Profile from "./pages/user/Profile.jsx";
+import Products from "./pages/Admin/Products.jsx";
+import UpdateProduct from "./pages/Admin/UpdateProduct.jsx";
+import Search from "./pages/user/Search.jsx";
+import ProductDetails from "./pages/user/ProductDetails.jsx";
+import CategoryProducts from "./pages/user/CategoryProducts.jsx";
+import CartPage from "./pages/user/CartPage.jsx";
 
 function App() {
-
   return (
     <>
       <Routes>
@@ -37,7 +35,7 @@ function App() {
         <Route path="/product/:slug" element={<ProductDetails />} />
         <Route path="/category/:slug" element={<CategoryProducts />} />
         <Route path="/cart" element={<CartPage />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/terms" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/policy" element={<Policy />} />
         <Route path="/dashboard" element={<PrivateRoute />}>
@@ -56,7 +54,7 @@ function App() {
         <Route path="/*" element={<Pagenotfound />} />
       </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
