@@ -18,14 +18,13 @@ const Contact = () => {
         <div className="col-md-7">
           <p className="h1 text-light text-justify mt-4">CONTACT US</p>
           <p className="h2 text-light text-justify mt-4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            <br />
-            Ducimus officiis obcaecati esse tempore unde ratione, eveniet
-            mollitia, perferendis eius temporibus dicta blanditiis doloremque
-            explicabo quasi sunt vero optio cum aperiam vel consectetur!
-            <br />
-            Laborum enim accusantium atque, excepturi sapiente amet! Tenetur
-            ducimus aut commodi illum quidem neque tempora nam.
+You may contact us using the information below:
+<br/>
+Merchant Legal entity name: UNNAT KUMAR AGARWAL<br/>
+Registered Address: JSSATE, Sector 62, Noida, Uttar Pradesh, PIN: 201301<br/>
+Operational Address: JSSATE, Sector 62, Noida, Uttar Pradesh, PIN: 201301<br/>
+Telephone No: 9118237337<br/>
+E-Mail ID: devolopkingbro@gmail.com<br/>
           </p>
         </div>
       </div>
